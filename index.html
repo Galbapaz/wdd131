@@ -3,10 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>WDD 131 | Dynamic Web Fundamentals | Gabriel Alba</title>
+    <meta name="description" content="WDD 131 | Dynamic Web Fundamentals | Gabriel Alba. Personal homepage featuring biography, location information, and web development resources.">
+    <meta name="author" content="Gabriel Alba">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/base.css">
+    <script src="scripts/getdates.js" defer></script>
 </head>
 <body>
-    <h1> Gabriel Alba / WDD131 </h1>
-    <p1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, numquam? Saepe molestiae debitis, minus harum aut totam? Recusandae fugit dolores mollitia fugiat totam ab facere, quasi maxime fuga consequatur voluptates</p1>
+    <header>
+    <span id="course-title">WDD 131:Dynamic Web Fundamentals</span>
+
+    <nav>
+      <a href="https://www.linkedin.com/in/gabriel-alba-976034266/" target="_blank">LinkedIn</a>
+      <a href="https://byupw.instructure.com/" target="_blank">I-Learn</a>
+      <a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/moro/10?lang=spa#:~:text=32%20S%C3%AD%2C,poder%20de%20Dios." target="_blank">Scripture</a>
+      <a href="#">Final Project</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Gabriel Alba</h1>
+
+    <section class="card">
+      <h2>About Me</h2>
+
+      <div class="card-content">
+        <p>
+          My name is Gabriel. I am studying web development and learning how to build dynamic and accessible websites. I enjoy teaching, learning new technologies, and improving my design and coding skills.
+        </p>
+
+        <img src="images/profile.jpg" alt="Profile photo of Gabriel Alba">
+      </div>
+
+      <h3>Cochabamba, Bolivia</h3>
+
+      <div class="location">
+        <img src="images/Flag_of_Bolivia.svg.png" alt="Flag of Bolivia">
+        <p>
+          Bolivia is a landlocked country in South America, known for its rich culture, diverse geography, and strong traditions.
+        </p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Web Dev Resources</h2>
+      <ul>
+        <li><a href="https://dev.to/" target="_blank">Dev.to Community</a></li>
+        <li><a href="https://www.smashingmagazine.com/" target="_blank">Smashing Magazine</a></li>
+        <li><a href="https://css-tricks.com/" target="_blank">CSS Tricks</a></li>
+        <li><a href="https://www.w3schools.com/" target="_blank">W3 Schools</a></li>
+        <li><a href="https://www.udemy.com/" target="_blank">Udemy</a></li>
+        <li><a href="https://picsum.photos/" target="_blank">Lorem Picsum</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      © <span id="currentyear"></span> 🍕 Gabriel Alba 🍕  Bolivia 
+    </p>
+    <p id="lastModified"></p>
+  </footer>
+    
 </body>
 </html>
