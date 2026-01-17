@@ -102,19 +102,18 @@ h1 {
   font-size: 1.1rem;
 }
 
-.card h3::after {
-  content: "";
-  display: block;
-  width: 60%;
-  height: 2px;
-  background-color: #ccc;
-  margin: 0.5rem auto 1rem;
-}
-
 .location {
   display: flex;
   gap: 1rem;
   align-items: center;
+}
+
+.city-line {
+  width: 60%;
+  height: 2px;
+  background-color: #ccc;
+  border: none;
+  margin: 0.5rem auto 1rem;
 }
 
 .location img {
