@@ -3,32 +3,35 @@
     main {
         display: grid;
         grid-template-columns: 2fr 1fr;
-        gap: 1rem;
-        padding: 1rem;
-    }
-
-
-    .hero img {
-        max-width: 1000px;  
-         height: 650px; 
-        margin: 0 auto;      
-        display: block;
+        gap: 1.5rem;
+        padding: 1.5rem;
     }
 
     .hero {
         grid-column: 1 / -1;
     }
 
-    .weather-icon {
-        display: none; 
+    
+    .hero img {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: block;
     }
 
-    .weather-emoji {
-        display: inline; 
-    }
-
+    
     section {
-        background-color: #f4f4f4;
-        border-radius: 8px;
+        background-color: var(--light-color);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    
+    .weather h2::after {
+        content: " ⛅";
+        font-size: 1.5rem;
+    }
+
+    
+    .weather-icon {
+        display: none;
     }
 }

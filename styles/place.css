@@ -1,4 +1,12 @@
 
+:root {
+    --primary-color: #C8102E;
+    --secondary-color: #007E3A;
+    --light-color: #ffffff;
+    --dark-color: #222;
+    --spacing: 1rem;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,19 +14,23 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--light-color);
+    color: var(--dark-color);
     line-height: 1.6;
 }
 
 
 header {
     text-align: center;
-    padding: 1rem;
+    padding: var(--spacing);
+    background-color: var(--primary-color);
+    color: var(--light-color);
 }
 
 .accent-bar {
     height: 8px;
-    background-color: #4CAF50;
+    background-color: var(--secondary-color);
 }
 
 
@@ -29,23 +41,29 @@ header {
 }
 
 section {
-    padding: 1rem;
+    padding: var(--spacing);
+    margin: var(--spacing);
+    border-radius: 8px;
+    background-color: #f4f4f4;
 }
+
 
 h2 {
     margin-bottom: 0.5rem;
+    color: var(--secondary-color);
 }
+
 
 ul {
     list-style: none;
 }
 
 
-.weather-emoji {
-    display: none; 
-}
-
 .weather-icon {
     width: 60px;
     margin: 0.5rem 0;
+}
+
+.weather-emoji {
+    display: none;
 }
