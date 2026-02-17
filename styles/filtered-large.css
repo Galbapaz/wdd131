@@ -1,16 +1,33 @@
 @media (min-width: 768px) {
 
+  
+    nav ul {
+        display: flex !important;
+        justify-content: center;
+        gap: 2rem;
+        flex-direction: row;
+    }
+
     #menuButton {
         display: none;
     }
 
-    #navMenu {
-        display: flex !important;
-        flex-direction: row;
-        justify-content: center;
+ 
+    #templeCards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+   
+    section {
+        transition: transform 0.3s ease;
+    }
+
+    section:hover {
+        transform: scale(1.03);
     }
 
     main {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        max-width: 1100px;
+        margin: 0 auto;
     }
 }
