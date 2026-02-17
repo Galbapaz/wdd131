@@ -1,88 +1,52 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temple Album</title> 
-    <meta name="description" content="A visual gallery of old and new temples categorized by size, featuring large and small temple images in an organized layout.">
+
+    <title>Temple Album</title>
+
+    <meta name="description" content="A visual gallery of temples categorized by age and size.">
     <meta name="author" content="Gabriel Alba Paz">
-    <link rel="stylesheet" href="styles/temples.css">
-    <link rel="stylesheet" href="styles/temples-large.css">
-    <script src="scripts/temples.js" defer></script>
+
+    
+    <link rel="stylesheet" href="styles/filtered-temples.css">
+    <link rel="stylesheet" href="styles/filtered-large.css" media="(min-width: 768px)">
+
+   
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
     <link rel="icon" href="images/favicon.ico">
 
-
+    
+    <script src="scripts/filtered-temples.js" defer></script>
 </head>
+
 <body>
 
     <header>
         <h2>Temple Album</h2>
 
-        <button id="menuButton" aria-label="Menú">&#9776;</button>
+        <button id="menuButton" aria-label="Menu">&#9776;</button>
 
-      <nav>
-        <ul id="navMenu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Old</a></li>
-            <li><a href="#">New</a></li>
-            <li><a href="#">Large</a></li>
-            <li><a href="#">Small</a></li>
-        </ul>
-      </nav>
-
+        <nav>
+            <ul id="navMenu">
+                <li><a href="#" id="home">Home</a></li>
+                <li><a href="#" id="old">Old</a></li>
+                <li><a href="#" id="new">New</a></li>
+                <li><a href="#" id="large">Large</a></li>
+                <li><a href="#" id="small">Small</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
         <h1>Temples Gallery</h1>
 
-        <figure>
-            <img src="images/temple.webp" alt="Templo 1">
-            <figcaption>Templo 1</figcaption>
-        </figure>
-
-        <figure>
-            <img src="images/temple.webp" alt="Templo 2">
-            <figcaption>Templo 2</figcaption>
-        </figure>
-
-        <figure>
-            <img src="images/temple.webp" alt="Templo 3">
-            <figcaption>Templo 3</figcaption>
-        </figure>
-
-        <figure>
-            <img src="images/temple.webp" alt="Templo 4">
-            <figcaption>Templo 4</figcaption>
-        </figure>
-
-        <figure>
-            <img src="images/temple.webp" alt="Templo 5">
-            <figcaption>Templo 5</figcaption>
-        </figure>
-
-        <figure>
-            <img src="images/temple.webp" alt="Templo 6">
-            <figcaption>Templo 6</figcaption>
-        </figure>
-
-        <figure>
-            <img src="images/temple.webp" alt="Templo 7">
-            <figcaption>Templo 7</figcaption>
-        </figure>
-
-        <figure>
-            <img src="images/temple.webp" alt="Templo 8">
-            <figcaption>Templo 8</figcaption>
-        </figure>
-
-        <figure>
-            <img src="images/temple.webp" alt="Templo 9"> 
-            <figcaption>Templo 9</figcaption>
-        </figure>
-
+      
+        <div id="templeCards"></div>
     </main>
 
     <footer>
