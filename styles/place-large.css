@@ -1,50 +1,62 @@
 @media (min-width: 768px) {
 
+  
     .hero {
         position: relative;
     }
 
     .hero img {
+        width: 100%;
         height: 600px;
         object-fit: cover;
+        display: block;
     }
 
-
+ 
     .data,
     .weather {
         position: absolute;
         width: 320px;
         background: rgba(255, 255, 255, 0.9);
-        padding: 1rem;
+        padding: var(--spacing);
         border-radius: 10px;
-        box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
     }
 
   
     .data {
         top: 130px;
         left: 40px;
+        text-align: left;
     }
 
    
     .weather {
         bottom: 100px;
         right: 40px;
+        text-align: left;
     }
 
-    
+  
     .data h2,
     .weather h2 {
         background: rgba(0, 126, 58, 0.85);
-        color: white;
+        color: var(--light-color);
         padding: 0.5rem;
         margin: -1rem -1rem 1rem -1rem;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
     }
 
-    
+   
+    .weather h2::after {
+        content: " ⛅";
+        font-size: 1.2rem;
+    }
+
+   
     .weather-icon {
         display: none;
     }
+
 }
