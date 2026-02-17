@@ -14,28 +14,28 @@ const temples = [
         location: "Aba, Nigeria",
         dedicated: "2005, August, 7",
         area: 11500,
-        imageUrl: "images/aba-nigeria-temple.webp"
+        imageUrl: "images/aba-nigeria-temple.jpg"
     },
     {
         templeName: "Manti Utah",
         location: "Manti, Utah, USA",
         dedicated: "1888, May, 21",
         area: 74792,
-        imageUrl: "images/manti-utah-temple.webp"
+        imageUrl: "images/manti-utah-temple.jpg"
     },
     {
         templeName: "Payson Utah",
         location: "Payson, Utah, USA",
         dedicated: "2015, June, 7",
         area: 96630,
-        imageUrl: "images/payson-utah-temple.webp"
+        imageUrl: "images/payson-utah-temple.jpg"
     },
     {
         templeName: "Yigo Guam",
         location: "Yigo, Guam",
         dedicated: "2020, May, 2",
         area: 6861,
-        imageUrl: "images/yigo-guam-temple.webp"
+        imageUrl: "images/yigo-guam-temple.jpg"
     },
     {
         templeName: "Washington D.C.",
@@ -49,14 +49,14 @@ const temples = [
         location: "Lima, Peru",
         dedicated: "1986, January, 10",
         area: 9600,
-        imageUrl: "images/lima-peru-temple.webp"
+        imageUrl: "images/lima-peru-temple.jpg"
     },
     {
         templeName: "Mexico City",
         location: "Mexico City, Mexico",
         dedicated: "1983, December, 2",
         area: 116642,
-        imageUrl: "images/mexico-city-temple.webp"
+        imageUrl: "images/mexico-city-temple.jpg"
     }
 ];
 
