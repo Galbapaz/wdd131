@@ -5,17 +5,16 @@
     }
 
     .hero img {
-        width: 100%;
         height: 600px;
         object-fit: cover;
-        display: block;
     }
+
 
     .data,
     .weather {
         position: absolute;
         width: 320px;
-        background: rgba(255, 255, 255, 0.85); 
+        background: rgba(255, 255, 255, 0.9);
         padding: 1rem;
         border-radius: 10px;
         box-shadow: 0 6px 15px rgba(0,0,0,0.3);
@@ -23,20 +22,20 @@
 
   
     .data {
-        top: 140px;
+        top: 130px;
         left: 40px;
     }
 
- 
+   
     .weather {
-        bottom: 80px;
+        bottom: 100px;
         right: 40px;
     }
 
-   
+    
     .data h2,
     .weather h2 {
-        background: rgba(0, 126, 58, 0.85); 
+        background: rgba(0, 126, 58, 0.85);
         color: white;
         padding: 0.5rem;
         margin: -1rem -1rem 1rem -1rem;
@@ -44,32 +43,8 @@
         border-top-right-radius: 10px;
     }
 
-   
-    .weather h2::after {
-        content: " ⛅";
-        font-size: 1.3rem;
-    }
-
-   
+    
     .weather-icon {
         display: none;
     }
-
-    header {
-        background-color: #C8102E; 
-        color: white;
-        text-align: center;
-        padding: 1.5rem;
-    }
-
-    .green-bar {
-        height: 15px;   
-        background-color: #007E3A; 
-        width: 100%;
-    }
-
 }
-
-
-
-
