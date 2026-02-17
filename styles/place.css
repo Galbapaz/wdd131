@@ -1,0 +1,51 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+
+header {
+    text-align: center;
+    padding: 1rem;
+}
+
+.accent-bar {
+    height: 8px;
+    background-color: #4CAF50;
+}
+
+
+.hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+section {
+    padding: 1rem;
+}
+
+h2 {
+    margin-bottom: 0.5rem;
+}
+
+ul {
+    list-style: none;
+}
+
+
+.weather-emoji {
+    display: none; 
+}
+
+.weather-icon {
+    width: 60px;
+    margin: 0.5rem 0;
+}

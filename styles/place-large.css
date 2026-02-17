@@ -1,0 +1,34 @@
+@media (min-width: 768px) {
+
+    main {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+
+    .hero img {
+        max-width: 1000px;  
+         height: 650px; 
+        margin: 0 auto;      
+        display: block;
+    }
+
+    .hero {
+        grid-column: 1 / -1;
+    }
+
+    .weather-icon {
+        display: none; 
+    }
+
+    .weather-emoji {
+        display: inline; 
+    }
+
+    section {
+        background-color: #f4f4f4;
+        border-radius: 8px;
+    }
+}
