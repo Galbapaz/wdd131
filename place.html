@@ -34,7 +34,7 @@
         </picture>
     </section>
 
-   
+    
     <section class="data">
         <h2>Data</h2>
         <ul>
@@ -52,19 +52,22 @@
     
     <section class="weather">
         <h2>Weather</h2>
+
+        
         <img src="images/weather.svg" alt="Partly cloudy weather icon" class="weather-icon">
+
         <ul>
             <li><strong>Temperature:</strong> 10°C</li>
             <li><strong>Conditions:</strong> Partly Cloudy</li>
             <li><strong>Wind:</strong> 5 km/h</li>
-            <li><strong>Wind Chill:</strong> 9.8°C</li>
+            <li><strong>Wind Chill:</strong> <span id="windChill"></span></li>
         </ul>
     </section>
 
 </main>
 
 <footer>
-    <p>&copy; 2024 🌸 Gabriel Alba Paz 🌸 Madagascar</p>
+    <p>&copy; <span id="currentYear"></span> 🌸 Gabriel Alba Paz 🌸 Madagascar</p>
     <p id="lastModified"></p>
 </footer>
 
