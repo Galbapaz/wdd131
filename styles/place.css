@@ -19,6 +19,22 @@ body {
     line-height: 1.6;
 }
 
+.data,
+.weather {
+    text-align: center;
+}
+
+.data ul,
+.weather ul {
+    padding: 0;
+}
+
+.data li,
+.weather li {
+    margin: 0.4rem 0;
+}
+
+
 
 header {
     text-align: center;
