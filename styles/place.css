@@ -13,34 +13,23 @@
 }
 
 body {
-    font-family: 'Segoe UI', sans-serif;
+    font-family: "Segoe UI", Arial, sans-serif;
     background-color: var(--light-color);
     color: var(--dark-color);
     line-height: 1.6;
 }
 
-.data,
-.weather {
-    text-align: center;
-}
-
-.data ul,
-.weather ul {
-    padding: 0;
-}
-
-.data li,
-.weather li {
-    margin: 0.4rem 0;
-}
-
-
-
+/* Header */
 header {
     text-align: center;
     padding: var(--spacing);
     background-color: var(--primary-color);
-    color: white;
+    color: var(--light-color);
+}
+
+
+header h1::after {
+    content: " 🇲🇬";
 }
 
 
@@ -64,14 +53,24 @@ section {
     background-color: #f4f4f4;
 }
 
-
 h2 {
     margin-bottom: 0.5rem;
     color: var(--secondary-color);
 }
 
+
 ul {
     list-style: none;
+}
+
+.data,
+.weather {
+    text-align: center;
+}
+
+.data li,
+.weather li {
+    margin: 0.4rem 0;
 }
 
 
@@ -80,10 +79,9 @@ ul {
     margin: 0.5rem 0;
 }
 
-
 footer {
     background-color: var(--primary-color);
-    color: white;
+    color: var(--light-color);
     text-align: center;
     padding: 1rem;
     margin-top: 2rem;
@@ -91,4 +89,19 @@ footer {
 
 footer p {
     margin: 0.5rem 0;
+}
+
+
+@media (min-width: 768px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 900px;
+        margin: 0 auto;
+        gap: 1rem;
+    }
+
+    .hero {
+        grid-column: 1 / -1;
+    }
 }
