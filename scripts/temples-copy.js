@@ -50,27 +50,34 @@ const temples = [
     imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
   },
 
-  {
-    templeName: "Rome Italy",
-    location: "Rome, Italy",
-    dedicated: "2019-03-10",
-    area: 41010,
-    imageUrl: "https://churchofjesuschrist.org/imgs/rome-temple.jpg"
-  },
-  {
-    templeName: "Salt Lake",
-    location: "Utah, USA",
-    dedicated: "1893-04-06",
-    area: 253000,
-    imageUrl: "https://churchofjesuschrist.org/imgs/salt-lake-temple.jpg"
-  },
-  {
-    templeName: "Laie Hawaii",
-    location: "Hawaii, USA",
-    dedicated: "1919-11-27",
-    area: 42100,
-    imageUrl: "https://churchofjesuschrist.org/imgs/laie-temple.jpg"
-  }
+
+
+{
+  templeName: "Rome Italy",
+  location: "Rome, Italy",
+  dedicated: "2019-03-10",
+  area: 41010,
+  imageUrl: "https://www.churchofjesuschrist.org/imgs/60ecad34b8ccba920297633d3f3b4763a7785667/full/3840%2C/0/default"
+},
+{
+  templeName: "Salt Lake",
+  location: "Utah, USA",
+  dedicated: "1893-04-06",
+  area: 253000,
+  imageUrl: "https://newsroom.churchofjesuschrist.org/media/960x540/saltlakecityutah_large.jpg"
+},
+{
+  templeName: "Laie Hawaii",
+  location: "Hawaii, USA",
+  dedicated: "1919-11-27",
+  area: 42100,
+  imageUrl: "https://news-pacific.churchofjesuschrist.org/media/960x540/laie_hawaii_temple1b.jpg"
+}
+
+
+
+
+
 ];
 
 
