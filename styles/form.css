@@ -7,13 +7,12 @@
   --border-color: #d1d5db;
   --muted-text: #6b7280;
   --label-color: #374151;
-  --focus-outline: rgba(124, 58, 237, 0.25);
-  --focus-shadow: rgba(124, 58, 237, 0.15);
-  --card-shadow: rgba(0, 0, 0, 0.08);
-  --shadow: 0 8px 24px var(--card-shadow);
+  --focus-outline: #7c3aed40;
+  --focus-shadow: #7c3aed26;
+  --card-shadow-color: #00000014;
+  --shadow: 0 8px 24px var(--card-shadow-color);
   --radius: 12px;
 }
-
 
 * {
   margin: 0;
@@ -21,14 +20,12 @@
   box-sizing: border-box;
 }
 
-
 body {
   font-family: "Roboto", sans-serif;
   background-color: var(--secondary-color);
   color: var(--text-color);
   line-height: 1.5;
 }
-
 
 .site-header {
   background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
@@ -43,11 +40,9 @@ body {
   letter-spacing: 0.5px;
 }
 
-
 main {
   padding: 1.5rem 1rem 2rem;
 }
-
 
 .form-wrapper {
   max-width: 700px;
@@ -58,13 +53,11 @@ main {
   box-shadow: var(--shadow);
 }
 
-
 .review-form {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
 }
-
 
 .form-group,
 fieldset {
@@ -74,20 +67,17 @@ fieldset {
   border: none;
 }
 
-
 label,
 legend {
   font-weight: 700;
   font-size: 1rem;
 }
 
-
 .helper-text {
   font-weight: 400;
   font-style: italic;
   color: var(--muted-text);
 }
-
 
 select,
 input[type="date"],
@@ -101,7 +91,6 @@ textarea {
   background-color: var(--white);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
-
 
 select:focus,
 input[type="date"]:focus,
@@ -123,12 +112,10 @@ textarea:focus {
   box-shadow: 0 0 0 3px var(--focus-shadow);
 }
 
-
 textarea {
   min-height: 140px;
   resize: vertical;
 }
-
 
 .rating-options {
   display: flex;
@@ -178,7 +165,6 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
-
 .submit-button,
 input[type="submit"] {
   background-color: var(--primary-color);
@@ -202,7 +188,6 @@ input[type="submit"]:active {
   transform: scale(0.98);
 }
 
-
 .site-footer {
   text-align: center;
   padding: 1.5rem 1rem 2rem;
@@ -213,7 +198,6 @@ input[type="submit"]:active {
 .site-footer p + p {
   margin-top: 0.35rem;
 }
-
 
 .confirmation-card {
   text-align: center;
@@ -228,7 +212,6 @@ input[type="submit"]:active {
 .confirmation-card p {
   margin-bottom: 0.75rem;
 }
-
 
 .back-link {
   display: inline-block;
@@ -249,7 +232,6 @@ input[type="submit"]:active {
 .back-link:active {
   transform: scale(0.98);
 }
-
 
 @media (min-width: 768px) {
   .site-header h1 {
