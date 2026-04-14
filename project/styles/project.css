@@ -1,0 +1,377 @@
+:root {
+  --primary-color: #1d3557;
+  --secondary-color: #457b9d;
+  --accent-color: #f1faee;
+  --light-color: #ffffff;
+  --background-color: #f8f9fa;
+  --text-color: #222222;
+  --max-width: 1100px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulseSoft {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.5rem;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  background-color: var(--primary-color);
+  color: var(--light-color);
+}
+
+.header-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.logo {
+  color: var(--light-color);
+  font-size: 1.4rem;
+  font-weight: bold;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+#menu-button {
+  background: transparent;
+  border: 1px solid var(--light-color);
+  color: var(--light-color);
+  font-size: 1.5rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#menu-button:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  transform: scale(1.05);
+}
+
+nav {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  animation: slideUp 0.4s ease;
+}
+
+nav.open {
+  display: flex;
+}
+
+nav a {
+  color: var(--light-color);
+  padding: 0.7rem;
+  border-radius: 0.4rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.hero,
+.content-section,
+.page-banner {
+  padding: 1.5rem 1rem;
+}
+
+.page-banner h1 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.hero {
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.hero-text {
+  animation: slideFromLeft 0.8s ease;
+}
+
+.hero-image {
+  animation: slideFromRight 0.8s ease;
+}
+
+.hero-text h1 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  margin-bottom: 1rem;
+}
+
+.button,
+.filter-btn,
+input[type="submit"] {
+  display: inline-block;
+  background-color: var(--secondary-color);
+  color: var(--light-color);
+  padding: 0.7rem 1rem;
+  border-radius: 0.4rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button:hover,
+.filter-btn:hover,
+input[type="submit"]:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.hero .button {
+  animation: pulseSoft 2.2s infinite;
+}
+
+.grid-two,
+.grid-three {
+  display: grid;
+  gap: 1rem;
+}
+
+.card,
+.resource-card,
+.tip-box,
+.form-section {
+  background-color: var(--light-color);
+  padding: 1rem;
+  border-radius: 0.7rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  animation: slideUp 0.7s ease;
+}
+
+.card:hover,
+.resource-card:hover,
+.tip-box:hover,
+.form-section:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.16);
+}
+
+.highlight {
+  background-color: var(--accent-color);
+  border-radius: 0.7rem;
+  margin: 1rem;
+  animation: fadeIn 1s ease;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.active-filter {
+  background-color: var(--primary-color);
+}
+
+.favorites-list,
+.references-list {
+  padding-left: 1.2rem;
+}
+
+.favorites-list li,
+.references-list li {
+  margin-bottom: 0.5rem;
+}
+
+form {
+  display: grid;
+  gap: 0.8rem;
+}
+
+label,
+legend {
+  font-weight: 500;
+}
+
+input,
+select,
+textarea {
+  padding: 0.7rem;
+  border-radius: 0.4rem;
+  border: 1px solid #ccc;
+  font: inherit;
+  width: 100%;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(69, 123, 157, 0.2);
+  transform: scale(1.01);
+}
+
+fieldset {
+  border: 1px solid #ccc;
+  border-radius: 0.4rem;
+  padding: 1rem;
+}
+
+fieldset label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+.form-response {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  animation: fadeIn 0.6s ease;
+}
+
+footer {
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+footer a {
+  color: var(--accent-color);
+}
+
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+@media (min-width: 700px) {
+  #menu-button {
+    display: none;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: auto;
+  }
+
+  .hero {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid-two {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-three {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

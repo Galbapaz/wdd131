@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="English Learning Hub helps students practice English with resources, study tips, and interactive tools.">
+  <meta name="author" content="Gabriel Alba">
+  <title>English Learning Hub | Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/project.css">
+  <script src="scripts/project.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">English Learning Hub</a>
+      <button id="menu-button" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+      <nav id="main-nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="resources.html">Resources</a>
+        <a href="tips.html">Study Tips</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Learn English in a Practical and Fun Way</h1>
+        <p>
+          English Learning Hub is a simple website for students who want useful resources,
+          better study habits, and motivation to improve every day.
+        </p>
+        <a class="button" href="resources.html">Explore Resources</a>
+      </div>
+      <div class="hero-image">
+        <img src="images/hero.webp" alt="Student learning English with a laptop and notebook" width="700" height="500">
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2>Why This Site Matters</h2>
+      <div class="grid-three">
+        <article class="card">
+          <h3>Useful Resources</h3>
+          <p>Find practice ideas for vocabulary, listening, speaking, and grammar.</p>
+        </article>
+        <article class="card">
+          <h3>Study Motivation</h3>
+          <p>Build better habits with short and realistic strategies for daily practice.</p>
+        </article>
+        <article class="card">
+          <h3>Interactive Experience</h3>
+          <p>Use filters, favorites, and personalized messages that make the website dynamic.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section highlight">
+      <h2>Featured Study Advice</h2>
+      <p>
+        The best way to improve your English is to practice a little every day.
+        Read, listen, repeat, and use the language in real situations.
+      </p>
+      <div class="tip-box">
+        <h3>Today&apos;s Tip</h3>
+        <p id="daily-tip">A helpful study tip will appear here.</p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2>Quick Start</h2>
+      <div class="grid-two">
+        <article class="card">
+          <h3>Visit the Resources Page</h3>
+          <p>Use the category buttons to discover learning materials that match your goals.</p>
+        </article>
+        <article class="card">
+          <h3>Save Your Favorites</h3>
+          <p>Choose the resources you like most and keep them saved on your device.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="currentyear"></span> Gabriel Alba | Bolivia</p>
+    <p id="lastModified"></p>
+    <p><a href="references.html">References</a></p>
+  </footer>
+</body>
+</html>
