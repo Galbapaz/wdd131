@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Site plan for the English Learning Hub website.">
+  <meta name="description" content="Contact page for English Learning Hub.">
   <meta name="author" content="Gabriel Alba">
-  <title>English Learning Hub | Site Plan</title>
+  <title>English Learning Hub | Contact</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,123 +28,66 @@
         <a href="index.html">Home</a>
         <a href="resources.html">Resources</a>
         <a href="tips.html">Study Tips</a>
-        <a href="contact.html">Contact</a>
-        <a href="siteplan.html" class="active">Site Plan</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="siteplan.html">Site Plan</a>
+        <a href="references.html">References</a>
+        
       </nav>
     </div>
   </header>
 
   <main>
-
     <section class="page-banner">
-      <h1>Site Plan</h1>
-      <p>This page explains the purpose, audience, structure, and design of the website.</p>
+      <h1>Contact</h1>
+      <p>Tell us how you like to practice English.</p>
     </section>
 
-    <section class="content-section">
-      <div class="grid-two">
+    <section class="content-section form-section">
+      <h2>Student Form</h2>
 
-        <article class="card">
-          <h2>Site Name</h2>
-          <p><strong>English Learning Hub</strong></p>
-          <p>
-            This name was chosen because the website provides useful English learning
-            resources, study tips, and interactive tools for students.
-          </p>
-        </article>
+      <form id="contact-form" action="#" method="get">
+        <label for="full-name">Full Name</label>
+        <input type="text" id="full-name" name="full-name" required>
 
-        <article class="card">
-          <h2>Purpose</h2>
-          <p>
-            The purpose of this website is to help students improve their English skills
-            through study resources, learning advice, and interactive features.
-          </p>
-        </article>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
 
-        <article class="card">
-          <h2>Target Audience</h2>
-          <p>
-            This site is designed for beginner and intermediate English learners who want
-            practical and simple ways to improve vocabulary, listening, speaking, and grammar.
-          </p>
-        </article>
+        <label for="skill">Favorite English Skill</label>
+        <select id="skill" name="skill" required>
+          <option value="">Select one option</option>
+          <option value="Vocabulary">Vocabulary</option>
+          <option value="Listening">Listening</option>
+          <option value="Speaking">Speaking</option>
+          <option value="Grammar">Grammar</option>
+        </select>
 
-        <article class="card">
-          <h2>User Needs</h2>
-          <p>
-            Users need a website that is easy to navigate, visually clear, mobile friendly,
-            and useful for daily English practice.
-          </p>
-        </article>
+        <fieldset>
+          <legend>How often do you study English?</legend>
 
-      </div>
+          <label>
+            <input type="radio" name="frequency" value="Every day" required>
+            Every day
+          </label>
+
+          <label>
+            <input type="radio" name="frequency" value="A few times a week">
+            A few times a week
+          </label>
+
+          <label>
+            <input type="radio" name="frequency" value="Sometimes">
+            Sometimes
+          </label>
+        </fieldset>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <input type="submit" value="Send Information" class="button">
+      </form>
+
+      <div id="form-response" class="form-response"></div>
     </section>
-
-    <section class="content-section highlight">
-      <h2>Site Structure</h2>
-      <ul class="references-list">
-        <li><strong>Home:</strong> introduction and featured study advice.</li>
-        <li><strong>Resources:</strong> categorized learning resources with filtering and favorites.</li>
-        <li><strong>Study Tips:</strong> useful advice and motivation for learning English.</li>
-        <li><strong>Contact:</strong> student form for feedback and interaction.</li>
-        <li><strong>References:</strong> list of sources used in the project.</li>
-        <li><strong>Site Plan:</strong> planning information for the website.</li>
-      </ul>
-    </section>
-
-    <section class="content-section">
-      <div class="grid-two">
-
-        <article class="card">
-          <h2>Color Scheme</h2>
-          <p><strong>Primary Color:</strong> #1d3557</p>
-          <p><strong>Secondary Color:</strong> #457b9d</p>
-          <p><strong>Accent Color:</strong> #f1faee</p>
-          <p>
-            These colors create a clean, calm, and academic look that matches the educational
-            purpose of the website.
-          </p>
-        </article>
-
-        <article class="card">
-          <h2>Typography</h2>
-          <p><strong>Font:</strong> Roboto</p>
-          <p>
-            Roboto was selected because it is clean, modern, easy to read, and appropriate
-            for educational content on both desktop and mobile devices.
-          </p>
-        </article>
-
-      </div>
-    </section>
-
-    <section class="content-section">
-      <div class="grid-two">
-
-        <article class="card">
-          <h2>Dynamic Features</h2>
-          <ul class="references-list">
-            <li>Responsive navigation menu</li>
-            <li>Random daily tip on the home page</li>
-            <li>Motivation button on the Study Tips page</li>
-            <li>Category filtering on the Resources page</li>
-            <li>Favorite resources saved with local storage</li>
-            <li>Interactive contact form response</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <h2>Wireframe Description</h2>
-          <p>
-            The homepage uses a hero section with text and an image, followed by content cards.
-            The internal pages keep a consistent header, navigation, footer, and card-based layout.
-            The design is responsive for small and large screens.
-          </p>
-        </article>
-
-      </div>
-    </section>
-
   </main>
 
   <footer>

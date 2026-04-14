@@ -5,10 +5,10 @@ const mainNav = document.querySelector("#main-nav");
 if (menuButton && mainNav) {
   menuButton.addEventListener("click", () => {
     mainNav.classList.toggle("open");
+    const isOpen = mainNav.classList.contains("open");
+    menuButton.setAttribute("aria-expanded", `${isOpen}`);
   });
 }
-
-
 
 const yearSpan = document.querySelector("#currentyear");
 if (yearSpan) {
@@ -19,8 +19,6 @@ const lastModified = document.querySelector("#lastModified");
 if (lastModified) {
   lastModified.textContent = `Last Modified: ${document.lastModified}`;
 }
-
-
 
 const dailyTip = document.querySelector("#daily-tip");
 
@@ -35,8 +33,6 @@ const tips = [
 if (dailyTip) {
   dailyTip.textContent = tips[Math.floor(Math.random() * tips.length)];
 }
-
-
 
 const motivationBtn = document.querySelector("#motivation-button");
 const motivationText = document.querySelector("#motivation-message");
@@ -55,8 +51,6 @@ if (motivationBtn && motivationText) {
     motivationText.textContent = random;
   });
 }
-
-
 
 const resources = [
   {
@@ -85,8 +79,6 @@ const resources = [
   }
 ];
 
-
-
 const imageMap = {
   vocabulary: "images/flashcards.jpg",
   listening: "images/podcast.webp",
@@ -94,75 +86,68 @@ const imageMap = {
   grammar: "images/grammar.jpg"
 };
 
-
-
 const container = document.querySelector("#resource-container");
 const filterButtons = document.querySelectorAll(".filter-btn");
-
-
+const favoritesList = document.querySelector("#favorites-list");
 
 function getFavorites() {
   return JSON.parse(localStorage.getItem("favorites")) || [];
 }
 
-function saveFavorites(favs) {
-  localStorage.setItem("favorites", JSON.stringify(favs));
+function saveFavorites(favorites) {
+  localStorage.setItem("favorites", JSON.stringify(favorites));
 }
 
-
-
-const favoritesList = document.querySelector("#favorites-list");
-
 function displayFavorites() {
-  if (!favoritesList) return;
-
-  const favs = getFavorites();
-  favoritesList.innerHTML = "";
-
-  if (favs.length === 0) {
-    favoritesList.innerHTML = "<li>No favorites yet</li>";
+  if (!favoritesList) {
     return;
   }
 
-  favs.forEach(f => {
+  const favorites = getFavorites();
+  favoritesList.innerHTML = "";
+
+  if (favorites.length === 0) {
+    favoritesList.innerHTML = "<li>No favorites yet.</li>";
+    return;
+  }
+
+  favorites.forEach((favorite) => {
     const li = document.createElement("li");
-    li.textContent = f;
+    li.textContent = favorite;
     favoritesList.appendChild(li);
   });
 }
 
-
-
 function addFavorite(title) {
-  const favs = getFavorites();
+  const favorites = getFavorites();
 
-  if (!favs.includes(title)) {
-    favs.push(title);
-    saveFavorites(favs);
+  if (!favorites.includes(title)) {
+    favorites.push(title);
+    saveFavorites(favorites);
     displayFavorites();
   }
 }
 
-
-
 function displayResources(list) {
-  if (!container) return;
+  if (!container) {
+    return;
+  }
 
   container.innerHTML = "";
 
-  list.forEach(item => {
+  list.forEach((item) => {
     const card = document.createElement("div");
     card.classList.add("resource-card");
 
     card.innerHTML = `
-      <img src="${imageMap[item.category]}" 
-           alt="${item.title}" 
-           loading="lazy">
-
+      <img
+        src="${imageMap[item.category]}"
+        alt="${item.title}"
+        loading="lazy"
+      >
       <h3>${item.title}</h3>
       <p>${item.description}</p>
-
-      <button class="button" data-title="${item.title}">
+      <button class="button favorite-button" data-title="${item.title}">
         Save Favorite
       </button>
     `;
@@ -170,27 +155,22 @@ function displayResources(list) {
     container.appendChild(card);
   });
 
-
-  document.querySelectorAll(".button").forEach(btn => {
-    btn.addEventListener("click", () => {
-      addFavorite(btn.dataset.title);
+  const favoriteButtons = document.querySelectorAll(".favorite-button");
+  favoriteButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      addFavorite(button.dataset.title);
     });
   });
 }
-
-
 
 if (container) {
   displayResources(resources);
   displayFavorites();
 }
 
-
-
-filterButtons.forEach(btn => {
+filterButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
-
-    filterButtons.forEach(b => b.classList.remove("active-filter"));
+    filterButtons.forEach((button) => button.classList.remove("active-filter"));
     btn.classList.add("active-filter");
 
     const category = btn.dataset.category;
@@ -198,38 +178,44 @@ filterButtons.forEach(btn => {
     if (category === "all") {
       displayResources(resources);
     } else {
-      const filtered = resources.filter(r => r.category === category);
+      const filtered = resources.filter((resource) => resource.category === category);
       displayResources(filtered);
     }
   });
 });
 
-
-
 const form = document.querySelector("#contact-form");
 const response = document.querySelector("#form-response");
 
 if (form && response) {
-
   const savedName = localStorage.getItem("name");
 
   if (savedName) {
-    response.textContent = `Welcome back, ${savedName}`;
+    response.textContent = `Welcome back, ${savedName}.`;
   }
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-    const name = document.querySelector("#full-name").value;
+    const name = document.querySelector("#full-name").value.trim();
+    const email = document.querySelector("#email").value.trim();
+    const skill = document.querySelector("#skill").value;
+    const message = document.querySelector("#message").value.trim();
+    const frequency = document.querySelector('input[name="frequency"]:checked');
 
-    if (!name) {
-      response.textContent = "Please complete the form.";
+    if (!name || !email || !skill || !message || !frequency) {
+      response.textContent = "Please complete all fields before submitting the form.";
+      return;
+    }
+
+    if (!email.includes("@") || !email.includes(".")) {
+      response.textContent = "Please enter a valid email address.";
       return;
     }
 
     localStorage.setItem("name", name);
 
-    response.textContent = `Thank you, ${name}!`;
+    response.textContent = `Thank you, ${name}. Your information was sent successfully.`;
     form.reset();
   });
 }
