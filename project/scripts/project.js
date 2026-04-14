@@ -1,13 +1,14 @@
+
 const menuButton = document.querySelector("#menu-button");
 const mainNav = document.querySelector("#main-nav");
 
 if (menuButton && mainNav) {
   menuButton.addEventListener("click", () => {
     mainNav.classList.toggle("open");
-    const isOpen = mainNav.classList.contains("open");
-    menuButton.setAttribute("aria-expanded", `${isOpen}`);
   });
 }
+
+
 
 const yearSpan = document.querySelector("#currentyear");
 if (yearSpan) {
@@ -19,204 +20,216 @@ if (lastModified) {
   lastModified.textContent = `Last Modified: ${document.lastModified}`;
 }
 
-const dailyTipElement = document.querySelector("#daily-tip");
 
-const dailyTips = [
-  "Read a short text in English every day.",
-  "Repeat new vocabulary out loud to remember it better.",
-  "Watch videos with English subtitles and write new words.",
-  "Practice speaking for five minutes, even if you make mistakes.",
-  "Review old words before learning new ones."
+
+const dailyTip = document.querySelector("#daily-tip");
+
+const tips = [
+  "Read English every day.",
+  "Practice speaking out loud.",
+  "Watch videos with subtitles.",
+  "Repeat new vocabulary.",
+  "Write simple sentences."
 ];
 
-if (dailyTipElement) {
-  const randomTip = dailyTips[Math.floor(Math.random() * dailyTips.length)];
-  dailyTipElement.textContent = randomTip;
+if (dailyTip) {
+  dailyTip.textContent = tips[Math.floor(Math.random() * tips.length)];
 }
 
-const motivationButton = document.querySelector("#motivation-button");
-const motivationMessage = document.querySelector("#motivation-message");
 
-const motivationMessages = [
-  "Every small step helps you improve your English.",
-  "Mistakes are part of the learning process.",
-  "Practice with patience and you will see progress.",
-  "Consistency is more important than perfection.",
-  "You can learn more when you stay curious and active."
+
+const motivationBtn = document.querySelector("#motivation-button");
+const motivationText = document.querySelector("#motivation-message");
+
+const messages = [
+  "Keep going, you are improving!",
+  "Small steps every day!",
+  "Mistakes help you learn!",
+  "Consistency is key!",
+  "Believe in yourself!"
 ];
 
-if (motivationButton && motivationMessage) {
-  motivationButton.addEventListener("click", () => {
-    const randomMessage =
-      motivationMessages[Math.floor(Math.random() * motivationMessages.length)];
-    motivationMessage.textContent = randomMessage;
+if (motivationBtn && motivationText) {
+  motivationBtn.addEventListener("click", () => {
+    const random = messages[Math.floor(Math.random() * messages.length)];
+    motivationText.textContent = random;
   });
 }
+
+
 
 const resources = [
   {
     id: 1,
     title: "Vocabulary Builder",
     category: "vocabulary",
-    description: "Practice useful words with flashcards, lists, and review activities."
+    description: "Practice useful words with flashcards."
   },
   {
     id: 2,
     title: "Listening Practice",
     category: "listening",
-    description: "Improve comprehension with short audio clips, songs, and simple videos."
+    description: "Improve comprehension with podcasts."
   },
   {
     id: 3,
-    title: "Speaking Corner",
+    title: "Speaking Practice",
     category: "speaking",
-    description: "Use questions, repetition, and shadowing techniques to speak more confidently."
+    description: "Practice real conversations."
   },
   {
     id: 4,
     title: "Grammar Guide",
     category: "grammar",
-    description: "Review grammar rules and examples in a clear and organized way."
-  },
-  {
-    id: 5,
-    title: "Word Review Routine",
-    category: "vocabulary",
-    description: "Create a habit of reviewing words during the week to remember them longer."
-  },
-  {
-    id: 6,
-    title: "Conversation Practice",
-    category: "speaking",
-    description: "Answer simple questions and talk about daily life to build fluency."
+    description: "Learn grammar rules easily."
   }
 ];
 
-const resourceContainer = document.querySelector("#resource-container");
+
+
+const imageMap = {
+  vocabulary: "images/flashcards.jpg",
+  listening: "images/podcast.webp",
+  speaking: "images/conversation.avif",
+  grammar: "images/grammar.jpg"
+};
+
+
+
+const container = document.querySelector("#resource-container");
 const filterButtons = document.querySelectorAll(".filter-btn");
-const favoritesList = document.querySelector("#favorites-list");
+
+
 
 function getFavorites() {
-  const savedFavorites = localStorage.getItem("favoriteResources");
-  return savedFavorites ? JSON.parse(savedFavorites) : [];
+  return JSON.parse(localStorage.getItem("favorites")) || [];
 }
 
-function saveFavorites(favorites) {
-  localStorage.setItem("favoriteResources", JSON.stringify(favorites));
+function saveFavorites(favs) {
+  localStorage.setItem("favorites", JSON.stringify(favs));
 }
+
+
+
+const favoritesList = document.querySelector("#favorites-list");
 
 function displayFavorites() {
-  if (!favoritesList) {
-    return;
-  }
+  if (!favoritesList) return;
 
-  const favorites = getFavorites();
+  const favs = getFavorites();
   favoritesList.innerHTML = "";
 
-  if (favorites.length === 0) {
-    favoritesList.innerHTML = "<li>No favorite resources saved yet.</li>";
+  if (favs.length === 0) {
+    favoritesList.innerHTML = "<li>No favorites yet</li>";
     return;
   }
 
-  favorites.forEach((favorite) => {
-    const listItem = document.createElement("li");
-    listItem.textContent = favorite;
-    favoritesList.appendChild(listItem);
+  favs.forEach(f => {
+    const li = document.createElement("li");
+    li.textContent = f;
+    favoritesList.appendChild(li);
   });
 }
 
-function addFavorite(title) {
-  const favorites = getFavorites();
 
-  if (!favorites.includes(title)) {
-    favorites.push(title);
-    saveFavorites(favorites);
+
+function addFavorite(title) {
+  const favs = getFavorites();
+
+  if (!favs.includes(title)) {
+    favs.push(title);
+    saveFavorites(favs);
     displayFavorites();
   }
 }
 
-function displayResources(resourceList) {
-  if (!resourceContainer) {
-    return;
-  }
 
-  resourceContainer.innerHTML = "";
 
-  resourceList.forEach((resource) => {
-    const article = document.createElement("article");
-    article.classList.add("resource-card");
+function displayResources(list) {
+  if (!container) return;
 
-    article.innerHTML = `
-      <h2>${resource.title}</h2>
-      <p><strong>Category:</strong> ${resource.category}</p>
-      <p>${resource.description}</p>
-      <button class="button favorite-button" data-title="${resource.title}">Save Favorite</button>
+  container.innerHTML = "";
+
+  list.forEach(item => {
+    const card = document.createElement("div");
+    card.classList.add("resource-card");
+
+    card.innerHTML = `
+      <img src="${imageMap[item.category]}" 
+           alt="${item.title}" 
+           loading="lazy">
+
+      <h3>${item.title}</h3>
+      <p>${item.description}</p>
+
+      <button class="button" data-title="${item.title}">
+        Save Favorite
+      </button>
     `;
 
-    resourceContainer.appendChild(article);
+    container.appendChild(card);
   });
 
-  const favoriteButtons = document.querySelectorAll(".favorite-button");
-  favoriteButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const title = button.getAttribute("data-title");
-      addFavorite(title);
+
+  document.querySelectorAll(".button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      addFavorite(btn.dataset.title);
     });
   });
 }
 
-if (resourceContainer) {
+
+
+if (container) {
   displayResources(resources);
   displayFavorites();
 }
 
-filterButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    filterButtons.forEach((btn) => btn.classList.remove("active-filter"));
-    button.classList.add("active-filter");
 
-    const category = button.getAttribute("data-category");
+
+filterButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+
+    filterButtons.forEach(b => b.classList.remove("active-filter"));
+    btn.classList.add("active-filter");
+
+    const category = btn.dataset.category;
 
     if (category === "all") {
       displayResources(resources);
     } else {
-      const filteredResources = resources.filter(
-        (resource) => resource.category === category
-      );
-      displayResources(filteredResources);
+      const filtered = resources.filter(r => r.category === category);
+      displayResources(filtered);
     }
   });
 });
 
-const contactForm = document.querySelector("#contact-form");
-const formResponse = document.querySelector("#form-response");
 
-if (contactForm && formResponse) {
-  const savedName = localStorage.getItem("studentName");
+
+const form = document.querySelector("#contact-form");
+const response = document.querySelector("#form-response");
+
+if (form && response) {
+
+  const savedName = localStorage.getItem("name");
 
   if (savedName) {
-    formResponse.textContent = `Welcome back, ${savedName}. You can update your information below.`;
+    response.textContent = `Welcome back, ${savedName}`;
   }
 
-  contactForm.addEventListener("submit", (event) => {
-    event.preventDefault();
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-    const fullName = document.querySelector("#full-name").value.trim();
-    const email = document.querySelector("#email").value.trim();
-    const skill = document.querySelector("#skill").value;
-    const message = document.querySelector("#message").value.trim();
-    const frequency = document.querySelector('input[name="frequency"]:checked');
+    const name = document.querySelector("#full-name").value;
 
-    if (!fullName || !email || !skill || !message || !frequency) {
-      formResponse.textContent =
-        "Please complete all fields before submitting the form.";
+    if (!name) {
+      response.textContent = "Please complete the form.";
       return;
     }
 
-    localStorage.setItem("studentName", fullName);
+    localStorage.setItem("name", name);
 
-    formResponse.textContent = `Thank you, ${fullName}. Your favorite skill is ${skill}, and your message was received successfully.`;
-
-    contactForm.reset();
+    response.textContent = `Thank you, ${name}!`;
+    form.reset();
   });
 }
